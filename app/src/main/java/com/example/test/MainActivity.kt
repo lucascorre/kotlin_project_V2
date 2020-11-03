@@ -19,49 +19,18 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        info(R.string.app_name)
-
+        andVersionRecyclerView.layoutManager = LinearLayoutManager(this)
+        andVersionRecyclerView.adapter = AndVersionAdapter(items)
+    }
 
         //Debut du code du recycler view
 
-        val andVersionArray = arrayOf(AndVersion("Banana"),
-            AndVersion("Lollipop"))
-        andVersionRecyclerView.adapter = AndVersionAdapter(andVersionArray)
-        andVersionRecyclerView.layoutManager = LinearLayoutManager(this)
-    }
-
+        val items = arrayOf(
+                AndVersion("Lollipop"),
+                AndVersion("Lollipop"),
+                AndVersion("Lollipop"),
+                AndVersion("Lollipop"),
+                AndVersion("Lollipop"),
+                AndVersion("Lollipop"),
+                AndVersion("Banana"))
 }
-
-
-
-class AndVersionAdapter(val items: Array<AndVersion>) : RecyclerView.Adapter<AndVersionAdapter.ViewHolder>() {
-
-    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view), LayoutContainer {
-        override val containerView: View?
-            get() = itemView
-        fun bindAndVersion(andVersion: AndVersion) {
-            with(andVersion) {
-                itemView.andVersionTxt.text = "$name"
-            }
-        }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AndVersionAdapter.ViewHolder {
-        fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
-            return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
-        }
-        val lineView = LayoutInflater.from(parent.context).inflate(R.layout.item_and_version, parent, false)
-        return ViewHolder(parent.inflate(R.layout.item_and_version))
-
-
-
-    }
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindAndVersion(items[position])
-    }
-
-    override fun getItemCount(): Int = items.size
-}
-
-
-// fin du code recycler view
