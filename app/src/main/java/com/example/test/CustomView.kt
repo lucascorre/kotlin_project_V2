@@ -25,7 +25,7 @@ class CustomView : View {
     private var mPaint = Paint()
     lateinit var mCircle: MagicCircle
     lateinit var mCircle2: MagicCircle
-    val magicArray = Array<MagicCircle>(50) { MagicCircle(1400, 2440) }
+    val magicArray = Array<MagicCircle>(50) { MagicCircle(1400, 2260) }
     // MagicCircle(1400, 2385)
 
     override fun onDraw(canvas: Canvas?) {

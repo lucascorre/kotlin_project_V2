@@ -15,6 +15,7 @@ import android.widget.Button
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.ButtonBarLayout
+import androidx.lifecycle.ViewModelProvider
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,8 +25,17 @@ import kotlinx.android.synthetic.main.item_and_version.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import android.widget.TextView
+
+
+
+
 
 class MainActivity : AppCompatActivity(), AnkoLogger {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,11 +66,8 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     val items = arrayOf(
         AndVersion("Lollipop"),
         AndVersion("Lollipop"),
-        AndVersion("Lollipop"),
-        AndVersion("Lollipop"),
-        AndVersion("Lollipop"),
-        AndVersion("Lollipop"),
-        AndVersion("Banana")
+        AndVersion("Banana"),
+        AndVersion("Oreo")
     )
 
 
