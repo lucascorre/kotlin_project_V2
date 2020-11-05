@@ -11,8 +11,8 @@ data class MagicCircle(val maxX: Int, val maxY: Int) : AnkoLogger {
 
     var mPaint = Paint()
 
-    var cx: Float = Random.nextInt(50,1400).toFloat()  //Random.nextInt(maxX).toFloat()
-    var cy: Float = Random.nextInt(50,2000).toFloat() //80F Random.nextInt(maxY).toFloat()
+    var cx: Float = Random.nextInt(50, 1400).toFloat()  //Random.nextInt(maxX).toFloat()
+    var cy: Float = Random.nextInt(50, 2000).toFloat() //80F Random.nextInt(maxY).toFloat()
     var dx: Float = Random.nextInt(10).toFloat()
     var dy: Float = Random.nextInt(10).toFloat()
     val rad: Float = Random.nextInt(10, 75).toFloat()    //(20 - dx) + (20 - dy) + 20
@@ -24,8 +24,8 @@ data class MagicCircle(val maxX: Int, val maxY: Int) : AnkoLogger {
 
     fun move() {
         when {
-            cx - rad !in 0F..((maxX - rad ))  -> dx = -dx
-            cy - rad !in 0F..((maxY - rad )) -> dy = -dy
+            cx - rad !in 0F..((maxX - rad)) -> dx = -dx
+            cy - rad !in 0F..((maxY - rad)) -> dy = -dy
         }
         cx += dx
         cy += dy
