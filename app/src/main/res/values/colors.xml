@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_primary_dark">#950000</color>
     <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccentDark">#4aa87a</color>
+
 </resources>

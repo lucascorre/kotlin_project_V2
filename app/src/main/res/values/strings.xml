@@ -2,4 +2,7 @@
     <string name="app_name">Application de test</string>
     <string name="pref_sound">true</string>
     <string name="label_sound">sound01</string>
+    <string name="bottom_navigation_menu_android">homeButton</string>
+    <string name="bottom_navigation_menu_logos">settingsButton</string>
+    <string name="bottom_navigation_menu_landscape">infoButton</string>
 </resources>

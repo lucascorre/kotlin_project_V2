@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.example.test.CustomView
         android:id="@+id/customView"
         android:layout_width="match_parent"
@@ -15,10 +16,10 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="177dp"
-        android:layout_height="289dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="364dp"
+        android:layout_width="128dp"
+        android:layout_height="245dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="392dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoya" />
@@ -31,13 +32,29 @@
         tools:layout_editor_absoluteY="37dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="664dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="604dp"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/activity_main_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="660dp"
+        android:background="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/bottom_navigation_menu"
+        />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

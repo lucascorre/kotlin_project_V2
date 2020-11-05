@@ -13,6 +13,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.ButtonBarLayout
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -37,6 +39,11 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         editor.putInt("5", 5)
         var userName: String by DelegatesExt.preference(this, PREF_NAME, "John")
         userName = "Justin"
+        val button : Button = findViewById(R.id.button1)
+        button.setOnClickListener() {
+            buttonToSettings()
+        }
+
 
     }
 
@@ -59,9 +66,21 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 
     @SuppressLint("ResourceType")
     fun switchLayout() {
-        button.setOnClickListener {
+        button1.setOnClickListener {
             setContentView(R.xml.fragment_settings)
         }
     }
+
+    @SuppressLint("ResourceType")
+    fun buttonToSettings() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("ALERT")
+        builder.setMessage("Vous avez appuyer sur le bouton")
+        builder.show()
+        setContentView(R.layout.test_layout)
+    }
+
+
+
 }
 
