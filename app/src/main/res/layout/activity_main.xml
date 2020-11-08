@@ -8,6 +8,7 @@
 
 
     <com.example.test.CustomView
+        android:background="#000000"
         android:id="@+id/customView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,6 +39,16 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="604dp"
         android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="604dp"
+        android:text="Button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
