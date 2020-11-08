@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.ButtonBarLayout
@@ -28,16 +29,17 @@ import retrofit2.Response
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import android.widget.TextView
-
-
-
+import androidx.constraintlayout.widget.ConstraintLayout
+import kotlinx.android.synthetic.main.test_layout.*
 
 
 class MainActivity : AppCompatActivity(), AnkoLogger {
 
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         andVersionRecyclerView.layoutManager = LinearLayoutManager(this)
         andVersionRecyclerView.adapter = AndVersionAdapter(items)
@@ -49,13 +51,27 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         editor.putInt("5", 5)
         var userName: String by DelegatesExt.preference(this, PREF_NAME, "John")
         userName = "Justin"
-        val button : Button = findViewById(R.id.button1)
+        val button: Button = findViewById(R.id.button1)
         button.setOnClickListener() {
-            buttonToSettings()
+            //buttonToSettings()
+            button1.isSelected = !button1.isSelected
+            customView.setBackgroundResource(R.color.blue)
+        }
+        button2.setOnClickListener {
+            button2.isSelected = !button2.isSelected
+            customView.setBackgroundResource(R.color.color_primary_dark)
+        }
+
+        button3.setOnClickListener {
+            button3.isSelected = !button3.isSelected
+            customView.setBackgroundResource(R.color.vert)
         }
 
 
+
     }
+
+
 
     companion object {
         const val PREF_NAME = "John"
@@ -70,19 +86,11 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         AndVersion("Oreo")
     )
 
-
-    @SuppressLint("ResourceType")
-    fun switchLayout() {
-        button1.setOnClickListener {
-            setContentView(R.xml.fragment_settings)
-        }
-    }
-
     @SuppressLint("ResourceType")
     fun buttonToSettings() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("ALERT")
-        builder.setMessage("Vous avez appuyer sur le bouton")
+        builder.setTitle("Couleurs")
+        builder.setMessage("Choisissez une couleur")
         builder.show()
         setContentView(R.layout.test_layout)
     }

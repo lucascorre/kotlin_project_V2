@@ -8,22 +8,11 @@
 
 
     <com.example.test.CustomView
-        android:background="#000000"
         android:id="@+id/customView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="128dp"
-        android:layout_height="245dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="392dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shoya" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/andVersionRecyclerView"
@@ -36,9 +25,10 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="604dp"
-        android:text="Button"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="252dp"
+        android:backgroundTint="@color/blue"
+        android:text="Bleu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,9 +36,21 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="604dp"
-        android:text="Button2"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="316dp"
+        android:backgroundTint="@color/color_primary_dark"
+        android:text="Rouge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="384dp"
+        android:backgroundTint="@color/vert"
+        android:text="Vert"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
